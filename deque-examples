@@ -104,10 +104,29 @@ void test3() {
 	display(deq);
 }
 
+void test4() {
+	//push front vs back ordering
+	std::cout << "\nTest4=======================" << std::endl;
+	std::vector <int> vec{ 1,2,3,4,5,6,7,8,9,10 };
+	std::deque<int> deq;
+	for (const auto& elem : vec) {
+		deq.push_front(elem);
+	}
+	display2(vec);
+	display(deq);
+	deq.clear();
+	for (const auto& elem : vec) {
+		deq.push_back(elem);
+	}
+	display2(vec);
+	display(deq);
+}
+
 int main()
 {
 	test1();
 	test2();
 	tets3();
+	test4();
 	return 0;
 }
