@@ -29,8 +29,60 @@ void test1() {
 	display(deq1);
 }
 
+void test2() {
+	//push and pops
+	std::cout << "\nTest2========================" << std::endl;
+	std::deque<int> deq{ 0,0,0 };
+	std::deque<int> deq1{ 0,0,0 };
+	std::deque<int> deq3{};
+	display(deq);
+	//manual push_back.
+	deq.push_back(10);
+	display(deq);
+	deq.push_back(20);
+	display(deq);
+	deq.push_back(30);
+	display(deq);
+	deq.push_back(40);
+	display(deq);
+	deq.push_back(50);
+	display(deq);
+	deq.push_back(60);
+	display(deq);
+	deq.push_back(70);
+	display(deq);
+	deq.push_back(80);
+	display(deq);
+	deq.push_back(90);
+	display(deq);
+	std::cout << "Calling for loop..." << std::endl;
+	//for loop for push_back increments of 10.
+	for (int i{ 1 }; i <= 10; ++i) {
+		deq1.push_back(i * 10);
+	}
+	display(deq1);
+	for (int i{ 1 }; i <= 10; ++i) {
+		deq3.push_front(i * 100);
+		display(deq3);
+	}
+	//display(deq3);
+	for (int i{ 1 }; i <= 10; i++) {
+		deq3.pop_back();
+		display(deq3);
+	}
+	for (int i{ 1 }; i <= 10; ++i) {
+		deq3.push_front(i * 100);
+		display(deq3);
+	}
+	for (int i{ 1 }; i <= 10; i++) {
+		deq3.pop_front();
+		display(deq3);
+	}
+}
+
 int main()
 {
 	test1();
+	test2();
 	return 0;
 }
