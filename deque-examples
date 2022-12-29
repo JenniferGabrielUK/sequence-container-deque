@@ -122,11 +122,29 @@ void test4() {
 	display(deq);
 }
 
+void test5() {
+	//same as test4 but using std::copy
+	//using iterators and a front_inserter
+	std::cout << "\nTest5=======================" << std::endl;
+	std::vector<int> vec{ 1,2,3,4,5,6,7,8,9,10 };
+	std::deque <int> deq{};
+	std::copy(vec.begin(), vec.end(), front_inserter(deq));
+	std::cout << "Vec & Deque with front_inserter." << std::endl;
+ 	display2(vec);
+	display(deq);
+	deq.clear();
+	std::copy(vec.begin(), vec.end(), std::back_inserter(deq));
+	std::cout << "Vec & Deque with back_inserter." << std::endl;
+	display2(vec);
+	display(deq);
+}
+
 int main()
 {
 	test1();
 	test2();
 	tets3();
 	test4();
+	test5();
 	return 0;
 }
