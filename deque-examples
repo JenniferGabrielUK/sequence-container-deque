@@ -146,6 +146,27 @@ void test6() {
 	display(deq_1);
 }
 
+void test7() {
+	std::cout << std::setw(33) << std::left << std::setfill('-') << "\n" << std::endl;
+	std::deque<int> deq{ 1,2,3,4,5,5,6,7,8,9,10 };
+	std::deque<double> deq_1{ 1.001,1.002,1.003,1.004,1.005,1.006,1.007,1.008,1.009,2.0 };
+	display(deq);
+	display(deq_1);
+	std::cout << "Calling for loop..." << std::endl;
+	//for loop for push_back increments of 10.
+	std::cout << "Push_back first deque by multiples of 10." << std::endl;
+	for (int i{ 1 }; i <= 10; ++i) {
+		deq.push_back(i * 10);
+	}
+	display(deq);
+	std::cout << "Calling for loop..." << std::endl;
+	std::cout << "Increment second deque by multiples of 100." << std::endl;
+	for (double i{ 0 }; i < 10; ++i) {
+		deq_1[i] = i * 100;
+	}
+	display(deq_1);
+}
+
 int main()
 {
 	test1();
@@ -154,5 +175,6 @@ int main()
 	test4();
 	test5();
 	test6();
+	test7();
 	return 0;
 }
